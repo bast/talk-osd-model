@@ -1,0 +1,292 @@
+name: inverse
+layout: true
+class: center, middle, inverse
+
+---
+
+# How open source development works
+
+## Radovan Bast
+
+Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Code examples: [OSI](http://opensource.org)-approved [MIT license](http://opensource.org/licenses/mit-license.html).
+
+---
+
+layout: false
+
+## Open source model
+
+- Often large number of contributors
+- Distributed team
+- Often the contributors are not paid for the contributions
+- Often the project is not the daytime job
+- Often no budget for servers
+- Often busy people with no time to maintain own servers
+- Often no profit or non-profit
+
+### Can we adopt their tools and solutions?
+
+---
+
+## Open source programmers are busy and poor
+
+### Communication
+
+- Mailing list
+- Chat: IRC or Slack
+- Forum: https://www.discourse.org
+- Via issues and @mentions
+
+### Free hosting
+
+- Repository
+- Issues
+- Tarball distribution
+- Website: GitHub pages or GitLab pages or BitBucket pages
+- Documentation: http://readthedocs.org
+- Testing: Travis CI
+- Code coverage: Coveralls
+
+---
+
+template: inverse
+
+## How can you publish a Nature paper?
+
+---
+
+## How to publish a Nature paper
+
+- Ask the Nature admins to give you access to the Nature paper sources
+- Promise to submit a high quality paper in the right place and using the right format and style
+- Once you get access simply check in your article sources
+- Make sure the issue looks good
+- If somebody complains later, make corrections
+
+---
+
+<img src="img/bizzaro-world.jpg" style="height: 420px;"/>
+
+---
+
+## Traditional centralized workflow
+
+- People who want to make changes need access
+- "Please give me access to the repository and I will contribute my changes. I promise not
+  to break anything."
+- Requires that team members have overview and understanding of the entire stack
+- Requires somebody watching over those team members who do not have full overview
+- Makes it difficult to steer a project
+- This model does not scale with the team size (scales perhaps to 4 people)
+
+---
+
+## Modern forking workflow
+
+- Anybody can fork ("copy") the project and make changes to the fork
+- On the fork you do whatever the license allows
+- You do not have to contribute changes back
+- You contribute changes back by filing a pull request or merge request
+- A pull request is a request to merge changes
+- "Please review my changes and if you agree to these changes, merge the pull request at your convenience with a mouse click"
+- Code review does not have to be done by a single person
+- Can automatically indicate whether the change merges without conflicts, whether it preserves tests, coverage, and style
+- This model scales to thousands of developers
+
+---
+
+template: inverse
+
+## There will be many versions of my code?
+
+---
+
+## There will be many versions of my code?
+
+- Yes!
+- You can see all forks
+- Linux kernel: 12900 forks
+- Git: 7500 forks
+- CMake: 510 forks
+- Psi4: 75 forks
+
+### In practice it is always clear where the main line development is
+
+---
+
+template: inverse
+
+## Will I lose control over what goes in?
+
+---
+
+## Will I lose control over what goes in?
+
+- Curiously OSS projects employing fork-pull-request have **more** control
+  than closed source projects employing centralized workflow
+- In OSD a person or more typically a group of people controls what goes
+  into the official main line development
+- Of course what can happen is that a fork becomes more popular (unlikely if
+  the main repo is active)
+
+---
+
+## GitHub
+
+- Over two million active projects: http://githut.info
+- De facto standard place today to develop software
+- Git works
+- Distributed version control works
+- There is no SVNHub
+- If you develop OSS, use GitHub (more visibility, better integrations)
+
+---
+
+## Code review
+
+- Peer review for code changes
+- Typically implemented via fork-pull-request workflow
+- Discussion thread
+- Typically in the browser; do not need terminal
+- Coupled with automated testing and code coverage
+- Allows to make sure that code goes in with a clear history, with documentation
+  and tests, and to the right branch
+- Avoids pre-release documentation work and changelog archaeology
+
+---
+
+template: inverse
+
+## Code review sounds good but sounds like a lot of work! Who will do it?
+
+---
+
+## Delegate code review
+
+- If you have 60 developers, give all developers the right to review
+- Do not review own code
+- Reviewing means browsing the diff and making sure that it follows the contribution guidelines
+- Reviewing a change typically only takes few minutes
+- Projects typically have one or few pull requests a week
+- You can decentralize code review
+
+---
+
+## One main line
+
+- Typically called master
+- Everything on the main line can in principle be released
+- Code that cannot be released may not be submitted towards master
+- Makes releases trivial (next slide)
+- Make the main development line read-only (nobody can push directly)
+- Never use city/university branches (`tromso` branch and `bratislava` branch, only feature branches)
+
+---
+
+## Release preparation
+
+- The main line is tested, documented, and carries a changelog and up-to-date list of authors (thanks to code review)
+- Website and documentation follow the sources
+- Branch off a release branch, e.g. `stable-2.x`
+- Apply bugfixes and cosmetics to `stable-2.x`, merge them to `master`
+- Once ready, tag the release, e.g. `stable-2.0.0`, and create tarball (mouse click)
+- Done
+- Release preparation reduces to a decision, all the work has been done earlier thanks to code review
+- Fork-pull-requests delegates (manpower), decentralizes (power), and delocalizes (time) effort
+
+---
+
+## Distribution of code
+
+- Release branch(es) to support patches
+- Releases are tagged
+- Release tarballs created automatically
+- Semantic versioning
+- People can also clone
+
+---
+
+## Patching
+
+- Patching requires that everybody agrees on one main development line
+- Git makes it easy to contribute and distribute patches provided everybody
+  can see the main development line
+- Patches are immediately available
+- Contributed via pull request
+- Semantic versioning
+- Applied to the oldest supported release branch and merged upwards
+- Back-ported using cherry-picking
+
+---
+
+## External contributions
+
+- Fork-pull-request
+- You will get contributions from people you do not know
+- Requires to write a contribution guide
+- Think about license
+
+---
+
+template: inverse
+
+## OK but I cannot publish my code because otherwise I will not get a permanent position
+
+---
+
+## Secret features are possible
+
+- No problem with distributed version control
+- Nobody forces you to merge your changes to the main development line
+- You submit the pull-request once the functionality is published and once you are ready
+
+---
+
+template: inverse
+
+## But sometimes we need to test or use unpublished features developed on different branches or even repos
+
+---
+
+template: inverse
+
+## "I need to put it on master otherwise my colleague cannot test it, right?"
+
+---
+
+## How to combine unpublished features?
+
+- Do not cross-merge feature branches (branch pollution)
+- Create integration branches which combine features
+- Always keep feature branches pure
+- `master` should be an integration branch too
+
+---
+
+## Updating websites
+
+### Closed source and own servers
+
+- Often one person with the right permissions needs to run some scripts
+
+### Open source and hosted in the cloud for free
+
+- Everybody can modify via fork-pull-request
+- Accepted pull-request automatically refreshes the website (hooks)
+
+---
+
+## Lessons to take home
+
+- Do not maintain own servers
+- Use a standard license
+- Document contribution guide
+- Document branching policy
+- Use one main development line
+- Learn Git
+- Make the main development line and release branches read-only (nobody can push directly)
+- Never submit unreleasable or unfinished code to master
+- Always submit code with documentation, tests, and changelog
+- Use code review: best way to learn from each other
+- Don't worry so much about read access, worry about write access
