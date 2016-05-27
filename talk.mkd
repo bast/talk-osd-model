@@ -170,6 +170,7 @@ template: inverse
 - Reviewing a change typically only takes few minutes
 - Projects typically have one or few pull requests a week
 - You can decentralize code review
+- However, if you want to steer the code, you then need to participate in code review
 
 ---
 
