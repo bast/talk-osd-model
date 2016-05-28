@@ -29,14 +29,7 @@ layout: false
 
 ---
 
-## Open source programmers are busy and poor
-
-### Communication
-
-- Mailing list
-- Chat: IRC or Slack
-- Forum: https://www.discourse.org
-- Via issues and @mentions
+## Open source programmers are busy and not millionaires
 
 ### Free hosting
 
@@ -47,6 +40,13 @@ layout: false
 - Documentation: http://readthedocs.org
 - Testing: Travis CI
 - Code coverage: Coveralls
+
+### Communication
+
+- Mailing list
+- Chat: IRC or Slack
+- Forum: https://www.discourse.org
+- Via issues and @mentions
 
 ---
 
@@ -59,7 +59,8 @@ template: inverse
 ## How to publish a Nature paper
 
 - Ask the Nature admins to give you access to the Nature paper sources
-- Promise to submit a high quality paper in the right place and using the right format and style
+- Promise to submit a high quality paper
+  in the right place and using the right format and style
 - Once you get access simply check in your article sources
 - Make sure the issue looks good
 - If somebody complains later, make corrections
@@ -91,7 +92,8 @@ template: inverse
 - A pull request is a request to merge changes
 - "Please review my changes and if you agree to these changes, merge the pull request at your convenience with a mouse click"
 - Code review does not have to be done by a single person
-- Can automatically indicate whether the change merges without conflicts, whether it preserves tests, coverage, and style
+- Can automatically indicate whether the change merges without conflicts,
+  whether it preserves tests, coverage, and style
 - This model scales to thousands of developers
 
 ---
@@ -123,7 +125,7 @@ template: inverse
 
 ## Will I lose control over what goes in?
 
-- Curiously OSS projects employing fork-pull-request have **more** control
+- Curiously OSS projects employing fork-pull-request typically have **more** control
   than closed source projects employing centralized workflow
 - In OSD a person or more typically a group of people controls what goes
   into the official main line development
@@ -165,6 +167,7 @@ template: inverse
 ## Delegate and decentralize code review
 
 - It is a lot of work to do it properly
+- But already minimal code review effort can have significant effect
 - Delegate and decentralize
 - If you want to steer the code, you then need to participate in code review
 - Group leaders must provide students with good standards and must make
@@ -187,13 +190,14 @@ template: inverse
 
 ## Release preparation
 
-- The main line is tested, documented, and carries a changelog and up-to-date list of authors (thanks to code review)
+- The main line is tested, documented, and carries a
+  changelog and up-to-date list of authors (thanks to code review)
 - Website and documentation follow the sources
 - Branch off a release branch, e.g. `stable-2.x`
 - Apply bugfixes and cosmetics to `stable-2.x`, merge them to `master`
 - Once ready, tag the release, e.g. `stable-2.0.0`, and create tarball (mouse click)
 - Done
-- Release preparation reduces to a decision, all the work has been done earlier thanks to code review
+- **Release preparation reduces to a decision**, all the work has been done earlier thanks to code review
 - Fork-pull-requests delegates (manpower), decentralizes (power), and delocalizes (time) effort
 
 ---
