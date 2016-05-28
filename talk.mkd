@@ -162,15 +162,15 @@ template: inverse
 
 ---
 
-## Delegate code review
+## Delegate and decentralize code review
 
-- If you have 60 developers, give all developers the right to review
+- It is a lot of work to do it properly
+- Delegate and decentralize
+- If you want to steer the code, you then need to participate in code review
+- Group leaders must provide students with good standards and must make
+  sure that standards are followed
 - Do not review own code
-- Reviewing means browsing the diff and making sure that it follows the contribution guidelines
-- Reviewing a change typically only takes few minutes
-- Projects typically have one or few pull requests a week
-- You can decentralize code review
-- However, if you want to steer the code, you then need to participate in code review
+- Large projects often follow military structure
 
 ---
 
